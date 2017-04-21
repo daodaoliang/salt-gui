@@ -1,0 +1,367 @@
+{% extends "base.html" %}
+  {% block content %}
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="page-header">Dashboard </h2>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Master Status
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body" style="height:250px">
+                            <div style="height:250px">
+                                <div class="list-group">
+                                    {% for info in check_service %}
+                                    <div class="list-group-item">
+                                        {% for key,value in info.items %}
+                                            {{ key }}
+                                            {% if value == 'Up' %}
+                                                <span class="pull-right text-muted btn-success btn-xs fa fa-arrow-circle-up"></span>
+                                            {% else %}
+                                                <span class="pull-right text-muted btn-danger btn-xs fa fa-arrow-circle-down"></span>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Queues status
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body" style="height:250px">
+                           <div id="main" style="height:250px"></div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Minion status
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body" style="height:250px">
+                            <div id="main1" style="height:250px"></div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            OS Release
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body" style="height:250px">
+                           <div id="main2" style="height:250px"></div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+      <script src="/static/echarts2/build/dist/echarts.js"></script>
+      <script src="/static/bower_components/jquery/dist/jquery.min.js"></script>
+
+      <script type="text/javascript">
+        // 路径配置
+        require.config({
+            paths: {
+                echarts: '/static/echarts2/build/dist/'
+            }
+        });
+
+        // 使用
+        require(
+            [
+                'echarts',
+                'echarts/chart/line', // 使用柱状图就加载bar模块，按需加载
+            ],
+            function (ec) {
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('main'),'macarons');
+
+                option = {
+                    tooltip : {
+                        trigger: 'axis'
+                    },
+                    legend: {
+                        data:[]
+                    },
+                    toolbox: {
+                        show : true,
+                        feature : {
+                            mark : {show: true},
+                            dataView : {show: true, readOnly: false},
+                            magicType : {show: true, type: []},
+                            restore : {show: true},
+                            saveAsImage : {show: true}
+                        }
+                    },
+                    calculable : true,
+                    grid: {
+                        borderWidth: 0,
+                        y: 30,
+                        y2: 60,
+                        x: 30,
+                        x2: 25
+                    },
+                    xAxis : [
+                        {
+                            type : 'category',
+                            boundaryGap : false,
+                            data : ['00:01:00','00:02:00','00:03:00','00:04:00','00:05:00','00:06:00'],
+                        }
+                    ],
+                    yAxis : [
+                        {
+                            type : 'value'
+                        }
+                    ],
+                    series : [
+                        {
+                            name:'queue',
+                            type:'line',
+                            stack: 'Total',
+                            data: [3,6,2,0,4,5,],
+                        },
+                    ]
+                };
+                // 为echarts对象加载数据
+                myChart.setOption(option);
+                // 10s 刷新一次页面
+                window.setInterval(function () {refreshData()},10000);
+
+                function refreshData(){
+
+                     //更新数据
+                    var queue_count_data = [];
+                    var time_list_data = [];
+                    $.ajax({
+                        type: "get",
+                        async: false, //同步执行
+                        url: "/dashboard/get_queue",
+                        data: {},
+                        dataType: "json", //返回数据形式为json
+                        success: function (result) {
+                            //alert(result.queue_count[2]);
+                            for (var i = 0; i < result.queue_count.length; i++) {
+                                queue_count_data.push(result.queue_count[i]);
+                                time_list_data.push(result.time_list[i]);
+                            }
+                        },
+                    });
+
+                    var option = myChart.getOption();
+                    option.series[0].data = queue_count_data;
+                    option.xAxis[0].data = time_list_data;
+                    myChart.setOption(option);
+                }
+            }
+        );
+
+  </script>
+
+      <script type="text/javascript">
+        // 路径配置
+        require.config({
+            paths: {
+                echarts: '/static/echarts2/build/dist'
+            }
+        });
+
+        // 使用
+        require(
+            [
+                'echarts',
+                'echarts/chart/bar', // 使用柱状图就加载bar模块，按需加载
+                'echarts/chart/funnel'
+            ],
+            function (ec) {
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('main1'),'macarons');
+
+                var option = {
+                    title: {
+                        x: 'center',
+                        text: '',
+                        subtext: '',
+                        link: ''
+                    },
+                    tooltip: {
+                        trigger: 'item'
+                    },
+                    toolbox: {
+                        show: true,
+                        feature: {
+                            dataView: {show: true, readOnly: false},
+                            restore: {show: true},
+                            saveAsImage: {show: true}
+                        }
+                    },
+                    calculable: true,
+                    grid: {
+                        borderWidth: 0,
+                        y: 50,
+                        y2: 30,
+                        x: 0,
+                        x2: 30
+                    },
+                    xAxis: [
+                        {
+                            type: 'category',
+                            show: false,
+                            data: ['Up', 'Down', 'Accepted', 'Unaccepted', 'Rejected']
+                        }
+                    ],
+                    yAxis: [
+                        {
+                            type: 'value',
+                            show: false
+                        }
+                    ],
+                    series: [
+                        {
+                            name: 'Minions Status',
+                            type: 'bar',
+                            itemStyle: {
+                                normal: {
+                                    color: function(params) {
+                                        // build a color map as your need.
+                                        var colorList = [
+                                          '#B5C334','#C1232B','#FCCE10','#E87C25','#27727B',
+                                        ];
+                                        return colorList[params.dataIndex]
+                                    },
+                                    label: {
+                                        show: true,
+                                        position: 'top',
+                                        formatter: '{b}\n{c}'
+                                    }
+                                }
+                            },
+                            data: {{ status|safe }},
+                            markPoint: {
+                                tooltip: {
+                                    trigger: 'item',
+                                    backgroundColor: 'rgba(0,0,0,0)',
+                                    formatter: function(params){
+                                        return '<img src="'
+                                                + params.data.symbol.replace('image://', '')
+                                                + '"/>';
+                                    }
+                                },
+                                data: [
+                                    {xAxis:0, y: 350, name:'Line', symbolSize:20, symbol: ''},
+                                    {xAxis:1, y: 350, name:'Bar', symbolSize:20, symbol: ''},
+                                    {xAxis:2, y: 350, name:'Scatter', symbolSize:20, symbol: ''},
+                                    {xAxis:3, y: 350, name:'K', symbolSize:20, symbol: ''},
+                                    {xAxis:4, y: 350, name:'Pie', symbolSize:20, symbol: ''},
+                                ]
+                            }
+                        }
+                    ]
+                };
+                // 为echarts对象加载数据
+                myChart.setOption(option);
+            }
+        );
+      </script>
+
+      <script type="text/javascript">
+        // 路径配置
+        require.config({
+            paths: {
+                echarts: '/static/echarts2/build/dist'
+            }
+        });
+
+        // 使用
+        require(
+            [
+                'echarts',
+                'echarts/chart/pie', // 使用柱状图就加载bar模块，按需加载
+                'echarts/chart/funnel'
+            ],
+            function (ec) {
+                // 基于准备好的dom，初始化echarts图表
+                var myChart = ec.init(document.getElementById('main2'),'macarons');
+
+                var option = {
+                    title : {
+                        text: '',
+                        subtext: '',
+                        x:'center'
+                    },
+                    tooltip : {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    legend: {
+                        orient : 'vertical',
+                        x : 'left',
+                        data:{{ os_release|safe }}
+                    },
+                    toolbox: {
+                        show : true,
+                        feature : {
+                            mark : {show: true},
+                            dataView : {show: true, readOnly: false},
+                            magicType : {
+                                show: true,
+                                type: ['pie', 'funnel'],
+                                option: {
+                                    funnel: {
+                                        x: '29%',
+                                        width: '50%',
+                                        funnelAlign: 'left',
+                                        max: 1548
+                                    }
+                                }
+                            },
+                            restore : {show: true},
+                            saveAsImage : {show: true}
+                        }
+                    },
+                    calculable : true,
+                    series : [
+                        {
+                            name:'OS Release',
+                            type:'pie',
+                            radius : '55%',
+                            center: ['55%', '56%'],
+                            data:{{ os_all|safe }}
+                        }
+                    ]
+                };
+                // 为echarts对象加载数据
+                myChart.setOption(option);
+            }
+        );
+  </script>
+
+  {% endblock %}
+

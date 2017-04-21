@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SaltShaker</title>
+    {% load staticfiles %}
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static "bower_components/bootstrap/dist/css/bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="{% static "bower_components/metisMenu/dist/metisMenu.min.css" %}" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="{% static "bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" %}" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="{% static "bower_components/datatables-responsive/css/dataTables.responsive.css" %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static "dist/css/sb-admin-2.css" %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static "bower_components/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon" />
+
+    <!-- Bootstrap Select2 -->
+    <link href="{% static "select2-4.0.2/dist/css/select2.min.css" %}" rel="stylesheet" type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    {% block extra_head %}
+
+    {% endblock %}
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img src="/static/images/logo.png"></a>
+                <a class="navbar-brand" href="/" style="padding-top: 25px;padding-left: 0px">SaltShaker<span style="color: #090;font-size: x-small">&nbsp;&nbsp;V2.1.3</span></a>
+                <div id="myAlert" class="alert alert-success" style="margin-left: 800px;margin-bottom:3px;padding: 3px;display: none">
+                    <a href="#" class="close" data-dismiss="alert">&times;</a>
+                    <strong>成功！</strong>结果是成功的。
+                </div>
+                <div class="alert alert-success alert-dismissable" style="margin-left: 700px;margin-top:3px;padding: 3px;;display: none">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. <a href="#" class="alert-link">Alert Link</a>.
+                            </div>
+
+            </div>
+            <!-- /.navbar-header -->
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-alerts" style="width: 400px">
+                        {% if alert_info == "" %}
+                        <li>
+                            <div class="alert alert-success alert-dismissable" style="margin-bottom:2px;display: none">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                <p class="alert-link">{{ alert_info }}</p>
+                            </div>
+                        </li>
+                        {% else %}
+                            {% if "Success" in alert_info %}
+                                <li>
+                                    <div class="alert alert-success alert-dismissable" style="margin-bottom:2px">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                        <p class="alert-link">{{ alert_info }}</p>
+                                    </div>
+                                </li>
+                            {% else %}
+                                <li>
+                                    <div class="alert alert-danger alert-dismissable" style="margin-bottom:2px">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                        <p class="alert-link">{{ alert_info }}</p>
+                                    </div>
+                                </li>
+                            {% endif %}
+                        {% endif %}
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> {{ request.user.username }}</a>
+                        </li>
+                        <li><a href="/account/manage_user/"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="/account/logout/"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search">
+                            <div class="input-group custom-search-form">
+                                <input type="text" class="form-control" placeholder="Search...">
+                                <span class="input-group-btn">
+                                <button class="btn btn-default btn-xs" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="/"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Minions<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/minions/minions_status/">Minions Status</a>
+                                </li>
+                                <li>
+                                    <a href="/minions/minions_keys/">Minions Keys Manage</a>
+                                </li>
+                                <li>
+                                    <a href="/minions/minions_asset_info/">Minions Asset Info</a>
+                                </li>
+                                <!--
+                                <li>
+                                    <a href="../minions/minions_servers_status.html">Minions Servers Status</a>
+                                </li>
+                                -->
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-play fa-fw"></i> Execute<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/execute/minions_shell_runcmd/">Run Shell Command</a>
+                                </li>
+                                <li>
+                                    <a href="/execute/minions_salt_runcmd.html">Run SaltStack Command</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-indent fa-fw"></i> Jobs<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/jobs/jobs_history/">Jobs History</a>
+                                </li>
+                                <li>
+                                    <a href="/jobs/jobs_manage/">Jobs Manage</a>
+                                </li>
+                                <!--
+                                <li>
+                                    <a href="/jobs/jobs_schedule/">Jobs Schedule</a>
+                                </li>
+                                -->
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-puzzle-piece fa-fw"></i> States Config<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/states_config/highstate/">Highstate</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-file fa-fw"></i> Files<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/files_manager/manage_file/">Files Manager</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--
+                        <li>
+                            <a href="#"><i class="fa fa-cloud-upload fa-fw"></i> Code Update<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#">DMP</a>
+                                </li>                        
+                            </ul>
+                        </li>
+                        -->
+                        <li>
+                            <a href="#"><i class="fa fa-group fa-fw"></i> Groups<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/groups/manage_group/">Manage Group</a>
+                                </li>
+                                <li>
+                                    <a href="/groups/manage_host/">Manage Host</a>
+                                </li>                          
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-cogs fa-fw"></i> System Setup<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/system_setup/system_tools/"><i class="fa fa-wrench fa-fw"></i> System Tools</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-user"></i> User<span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li> 
+                                            <a href="/account/manage_user/">Manage User</a>
+                                        </li>
+                                        <li>
+                                            <a href="/account/manage_business/">Manage Business</a>
+                                        </li>                          
+                                        <li>
+                                           <a href="/account/manage_privilege/">Manage Role Privilege</a>
+                                        </li>                          
+
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- jQuery -->
+    <script src="{% static "bower_components/jquery/dist/jquery.min.js" %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static "bower_components/bootstrap/dist/js/bootstrap.min.js" %}"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="{% static "bower_components/metisMenu/dist/metisMenu.min.js" %}"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="{% static "bower_components/datatables/media/js/jquery.dataTables.min.js" %}"></script>
+    <script src="{% static "bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js" %}"></script>
+
+    <!-- Bootstrap Select2 JavaScript -->
+    <script src="{% static "select2-4.0.2/dist/js/select2.min.js" %}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{% static "dist/js/sb-admin-2.js" %}"></script>
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+                responsive: true
+        });
+    });
+    // tooltip demo
+    $('.tooltip-demo').tooltip({
+        selector: "[data-toggle=tooltip]",
+        container: "body"
+    })
+    // popover demo
+    $("[data-toggle=popover]")
+        .popover()
+    </script>
+    {% block jquery %}
+
+    {% endblock %}
+</body>
+
+</html>

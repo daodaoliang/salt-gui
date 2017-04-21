@@ -1,0 +1,423 @@
+[2017-04-17 16:47:06,335: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2017-04-17 16:47:06,347: INFO/MainProcess] mingle: searching for neighbors
+[2017-04-17 16:47:07,357: INFO/MainProcess] mingle: all alone
+[2017-04-17 16:47:07,372: WARNING/MainProcess] celery@s1-sit-salt-master ready.
+[2017-04-17 16:47:09,370: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[b2a95cf3-db4d-4f1e-baf1-fd237b4d1d40]
+[2017-04-17 16:47:09,371: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[24555cb3-d0ec-4e6b-9aa3-4a4a3fc94788]
+[2017-04-17 16:47:25,832: INFO/MainProcess] Task shaker.tasks.dashboard_task[b2a95cf3-db4d-4f1e-baf1-fd237b4d1d40] succeeded in 16.460651729s: None
+[2017-04-17 16:47:41,200: INFO/MainProcess] Task shaker.tasks.minions_status_task[24555cb3-d0ec-4e6b-9aa3-4a4a3fc94788] succeeded in 15.366842019s: None
+[2017-04-17 16:48:37,960: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[c7707244-d017-48a4-9cb3-e3b3e8d7de85]
+[2017-04-17 16:48:37,960: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[cd713fb9-bbcd-4f4f-a036-f440852b424c]
+[2017-04-17 16:48:54,742: INFO/MainProcess] Task shaker.tasks.dashboard_task[c7707244-d017-48a4-9cb3-e3b3e8d7de85] succeeded in 16.780666658s: None
+[2017-04-17 16:49:07,556: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[f997bdd5-8b06-47bd-86c7-90bf9a5c0773]
+[2017-04-17 16:49:07,557: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[3a00f310-975f-4127-8005-62c454317260]
+[2017-04-17 16:49:10,109: INFO/MainProcess] Task shaker.tasks.minions_status_task[cd713fb9-bbcd-4f4f-a036-f440852b424c] succeeded in 15.366552647s: None
+[2017-04-17 16:49:26,555: INFO/MainProcess] Task shaker.tasks.dashboard_task[f997bdd5-8b06-47bd-86c7-90bf9a5c0773] succeeded in 16.446227441s: None
+[2017-04-17 16:49:41,918: INFO/MainProcess] Task shaker.tasks.minions_status_task[3a00f310-975f-4127-8005-62c454317260] succeeded in 15.362312178s: None
+
+Restarting celery worker (manage.py celery worker --loglevel=info -c 1)
+ 
+ -------------- celery@s1-sit-salt-master v3.1.17 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-3.10.0-327.el7.x86_64-x86_64-with-centos-7.2.1511-Core
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         default:0x35eead0 (djcelery.loaders.DjangoLoader)
+- ** ---------- .> transport:   amqp://guest:**@127.0.0.1:5672//
+- ** ---------- .> results:     database
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . shaker.tasks.accept_grains_task
+  . shaker.tasks.dashboard_task
+  . shaker.tasks.grains_task
+  . shaker.tasks.minions_status_task
+
+[2017-04-17 17:51:32,067: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2017-04-17 17:51:32,079: INFO/MainProcess] mingle: searching for neighbors
+[2017-04-17 17:51:33,088: INFO/MainProcess] mingle: all alone
+[2017-04-17 17:51:33,103: WARNING/MainProcess] celery@s1-sit-salt-master ready.
+[2017-04-18 08:55:57,011: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[7fdc4453-c7c7-4228-a807-2c55ad9f8e57]
+[2017-04-18 08:55:57,013: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[9edafbde-1746-42c9-af1d-d8c3fb180396]
+[2017-04-18 08:56:10,887: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[ab748950-5f31-4383-8c68-e23b6ad3c260]
+[2017-04-18 08:56:10,888: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[d509b147-e4e2-442f-9316-f0cdd062b627]
+[2017-04-18 08:56:13,485: INFO/MainProcess] Task shaker.tasks.dashboard_task[7fdc4453-c7c7-4228-a807-2c55ad9f8e57] succeeded in 16.471225479s: None
+[2017-04-18 08:56:28,849: INFO/MainProcess] Task shaker.tasks.minions_status_task[9edafbde-1746-42c9-af1d-d8c3fb180396] succeeded in 15.363889227s: None
+[2017-04-18 08:56:45,286: INFO/MainProcess] Task shaker.tasks.dashboard_task[ab748950-5f31-4383-8c68-e23b6ad3c260] succeeded in 16.435863763s: None
+[2017-04-18 08:57:00,659: INFO/MainProcess] Task shaker.tasks.minions_status_task[d509b147-e4e2-442f-9316-f0cdd062b627] succeeded in 15.372928573s: None
+[2017-04-18 09:00:56,069: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[bd9981c1-7fdd-4b20-9f0f-facc66ace278]
+[2017-04-18 09:00:56,070: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[93e03fb9-00c8-49b6-a5bf-4f8d030ef732]
+[2017-04-18 09:01:12,498: INFO/MainProcess] Task shaker.tasks.dashboard_task[bd9981c1-7fdd-4b20-9f0f-facc66ace278] succeeded in 16.427559424s: None
+[2017-04-18 09:01:27,873: INFO/MainProcess] Task shaker.tasks.minions_status_task[93e03fb9-00c8-49b6-a5bf-4f8d030ef732] succeeded in 15.373981107s: None
+[2017-04-18 09:27:38,501: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[27bf9969-0920-4f34-945a-981bdbcbc77f]
+[2017-04-18 09:27:38,502: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[4b06e3db-0995-4ae5-b9cc-000f1c11d198]
+[2017-04-18 09:27:54,947: INFO/MainProcess] Task shaker.tasks.dashboard_task[27bf9969-0920-4f34-945a-981bdbcbc77f] succeeded in 16.44310117s: None
+[2017-04-18 09:28:10,310: INFO/MainProcess] Task shaker.tasks.minions_status_task[4b06e3db-0995-4ae5-b9cc-000f1c11d198] succeeded in 15.362092105s: None
+[2017-04-18 10:43:54,222: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[db9d2211-a13d-4485-ad84-90af54f14b17]
+[2017-04-18 10:43:54,223: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[369805fd-62b3-4213-9000-5cda767f44e2]
+[2017-04-18 10:44:10,662: INFO/MainProcess] Task shaker.tasks.dashboard_task[db9d2211-a13d-4485-ad84-90af54f14b17] succeeded in 16.438554123s: None
+[2017-04-18 10:44:26,036: INFO/MainProcess] Task shaker.tasks.minions_status_task[369805fd-62b3-4213-9000-5cda767f44e2] succeeded in 15.373140563s: None
+[2017-04-18 11:46:32,409: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 2.00 seconds...
+
+[2017-04-18 11:46:34,423: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 4.00 seconds...
+
+[2017-04-18 11:46:38,434: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 6.00 seconds...
+
+[2017-04-18 11:46:44,450: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 8.00 seconds...
+
+[2017-04-18 11:46:52,467: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 10.00 seconds...
+
+[2017-04-18 11:47:02,487: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 12.00 seconds...
+
+[2017-04-18 11:47:14,508: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 14.00 seconds...
+
+[2017-04-18 11:47:28,532: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 16.00 seconds...
+
+[2017-04-18 11:47:44,558: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 18.00 seconds...
+
+[2017-04-18 11:48:02,587: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 20.00 seconds...
+
+[2017-04-18 11:48:22,617: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 22.00 seconds...
+
+[2017-04-18 11:48:44,649: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 24.00 seconds...
+
+[2017-04-18 11:49:08,687: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2017-04-18 11:49:08,699: INFO/MainProcess] mingle: searching for neighbors
+[2017-04-18 11:49:09,709: INFO/MainProcess] mingle: all alone
+[2017-04-18 11:49:09,757: WARNING/MainProcess] celery@s1-sit-salt-master ready.
+[2017-04-18 11:49:11,724: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[abd14990-6d8b-41e8-bbbd-c0635c025f3f]
+[2017-04-18 11:49:11,724: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[94e43353-fccb-478e-b191-c0ed6a200a36]
+[2017-04-18 11:49:14,914: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[bbaeb748-82b5-4a5c-82c0-3d77c26413cf]
+[2017-04-18 11:49:14,914: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[79052b3c-6efc-4f54-9ed0-ca47c6b96ae5]
+[2017-04-18 11:49:28,565: INFO/MainProcess] Task shaker.tasks.dashboard_task[abd14990-6d8b-41e8-bbbd-c0635c025f3f] succeeded in 16.840133139s: None
+[2017-04-18 11:49:43,922: INFO/MainProcess] Task shaker.tasks.minions_status_task[94e43353-fccb-478e-b191-c0ed6a200a36] succeeded in 15.356211547s: None
+[2017-04-18 11:49:59,369: INFO/MainProcess] Task shaker.tasks.dashboard_task[bbaeb748-82b5-4a5c-82c0-3d77c26413cf] succeeded in 15.446594649s: None
+[2017-04-18 11:50:14,736: INFO/MainProcess] Task shaker.tasks.minions_status_task[79052b3c-6efc-4f54-9ed0-ca47c6b96ae5] succeeded in 15.367092884s: None
+
+Restarting celery worker (manage.py celery worker --loglevel=info -c 1)
+ 
+ -------------- celery@s1-sit-salt-master v3.1.17 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-3.10.0-327.el7.x86_64-x86_64-with-centos-7.2.1511-Core
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         default:0x3156ad0 (djcelery.loaders.DjangoLoader)
+- ** ---------- .> transport:   amqp://guest:**@127.0.0.1:5672//
+- ** ---------- .> results:     database
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . shaker.tasks.accept_grains_task
+  . shaker.tasks.dashboard_task
+  . shaker.tasks.grains_task
+  . shaker.tasks.minions_status_task
+
+[2017-04-18 12:21:32,462: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2017-04-18 12:21:32,474: INFO/MainProcess] mingle: searching for neighbors
+[2017-04-18 12:21:33,484: INFO/MainProcess] mingle: all alone
+[2017-04-18 12:21:33,499: WARNING/MainProcess] celery@s1-sit-salt-master ready.
+[2017-04-18 12:55:30,497: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[00bef6d1-5fd5-4a8c-9cd9-7a1a326b2b4c]
+[2017-04-18 12:55:45,874: INFO/MainProcess] Task shaker.tasks.minions_status_task[00bef6d1-5fd5-4a8c-9cd9-7a1a326b2b4c] succeeded in 15.376102788s: None
+[2017-04-18 12:55:58,405: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[2e8df221-f831-4f64-8121-c0a411cc7912]
+[2017-04-18 12:55:58,406: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[a9dbfe50-903f-4643-b802-05e182f10b7b]
+[2017-04-18 12:56:02,479: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[4d091169-03c2-4642-8cd6-be9d724c9b88]
+[2017-04-18 12:56:13,760: INFO/MainProcess] Task shaker.tasks.minions_status_task[2e8df221-f831-4f64-8121-c0a411cc7912] succeeded in 15.353260974s: None
+[2017-04-18 12:56:31,490: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[539709ec-375e-4709-b7b3-6ecdf93a98e6]
+[2017-04-18 12:56:46,707: INFO/MainProcess] Task shaker.tasks.minions_status_task[a9dbfe50-903f-4643-b802-05e182f10b7b] succeeded in 32.946730547s: None
+[2017-04-18 12:57:02,062: INFO/MainProcess] Task shaker.tasks.minions_status_task[4d091169-03c2-4642-8cd6-be9d724c9b88] succeeded in 15.354209235s: None
+[2017-04-18 12:57:17,434: INFO/MainProcess] Task shaker.tasks.minions_status_task[539709ec-375e-4709-b7b3-6ecdf93a98e6] succeeded in 15.372363772s: None
+[2017-04-18 12:57:36,880: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[c40a3674-360e-42cf-9ef1-3d4e85a527e3]
+[2017-04-18 12:57:37,412: INFO/MainProcess] Task shaker.tasks.minions_status_task[c40a3674-360e-42cf-9ef1-3d4e85a527e3] succeeded in 0.530623814s: None
+[2017-04-18 12:59:35,272: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[f35e9e5a-e4a3-482e-a22f-bc0b54606395]
+[2017-04-18 12:59:51,636: INFO/MainProcess] Task shaker.tasks.minions_status_task[f35e9e5a-e4a3-482e-a22f-bc0b54606395] succeeded in 16.36279808s: None
+[2017-04-18 13:00:01,611: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[c352d57d-ab13-4a04-9216-560c5c29666e]
+[2017-04-18 13:00:02,133: INFO/MainProcess] Task shaker.tasks.minions_status_task[c352d57d-ab13-4a04-9216-560c5c29666e] succeeded in 0.521300146s: None
+[2017-04-18 13:00:12,690: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[d22f1348-aa5c-4337-910a-fae75afec013]
+[2017-04-18 13:00:12,998: INFO/MainProcess] Task shaker.tasks.minions_status_task[d22f1348-aa5c-4337-910a-fae75afec013] succeeded in 0.307715679s: None
+
+Restarting celery worker (manage.py celery worker --loglevel=info -c 1)
+
+worker: Warm shutdown (MainProcess)
+ 
+ -------------- celery@s1-sit-salt-master v3.1.17 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-3.10.0-327.el7.x86_64-x86_64-with-centos-7.2.1511-Core
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         default:0x1f72b90 (djcelery.loaders.DjangoLoader)
+- ** ---------- .> transport:   amqp://guest:**@127.0.0.1:5672//
+- ** ---------- .> results:     database
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . shaker.tasks.accept_grains_task
+  . shaker.tasks.dashboard_task
+  . shaker.tasks.grains_task
+  . shaker.tasks.minions_status_task
+
+[2017-04-18 17:27:26,912: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 2.00 seconds...
+
+[2017-04-18 17:27:28,922: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 4.00 seconds...
+
+[2017-04-18 17:27:32,936: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 6.00 seconds...
+
+[2017-04-18 17:27:38,951: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 8.00 seconds...
+
+[2017-04-18 17:27:46,969: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 10.00 seconds...
+
+[2017-04-18 17:27:56,989: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 12.00 seconds...
+
+[2017-04-18 17:28:09,011: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 14.00 seconds...
+
+[2017-04-18 17:28:23,035: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 16.00 seconds...
+
+[2017-04-18 17:28:39,061: ERROR/MainProcess] consumer: Cannot connect to amqp://guest:**@127.0.0.1:5672//: [Errno 111] Connection refused.
+Trying again in 18.00 seconds...
+
+[2017-04-18 17:54:38,285: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2017-04-18 17:54:38,307: INFO/MainProcess] mingle: searching for neighbors
+[2017-04-18 17:54:39,317: INFO/MainProcess] mingle: all alone
+[2017-04-18 17:54:39,337: WARNING/MainProcess] celery@s1-sit-salt-master ready.
+[2017-04-18 17:54:57,740: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[703f6417-468c-4d0a-be71-67095b775c0f]
+[2017-04-18 17:54:57,741: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[e18a2fc3-6b7f-49b1-9457-eebc16fd3a66]
+[2017-04-18 17:54:59,783: INFO/MainProcess] Task shaker.tasks.dashboard_task[703f6417-468c-4d0a-be71-67095b775c0f] succeeded in 2.041777522s: None
+[2017-04-18 17:55:00,303: INFO/MainProcess] Task shaker.tasks.minions_status_task[e18a2fc3-6b7f-49b1-9457-eebc16fd3a66] succeeded in 0.519446287s: None
+
+Restarting celery worker (manage.py celery worker --loglevel=info -c 1)
+ 
+ -------------- celery@s1-sit-salt-master v3.1.17 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-3.10.0-327.el7.x86_64-x86_64-with-centos-7.2.1511-Core
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         default:0x2c58ad0 (djcelery.loaders.DjangoLoader)
+- ** ---------- .> transport:   amqp://guest:**@127.0.0.1:5672//
+- ** ---------- .> results:     database
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . shaker.tasks.accept_grains_task
+  . shaker.tasks.dashboard_task
+  . shaker.tasks.grains_task
+  . shaker.tasks.minions_status_task
+
+[2017-04-18 18:10:17,542: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2017-04-18 18:10:17,555: INFO/MainProcess] mingle: searching for neighbors
+[2017-04-18 18:10:18,565: INFO/MainProcess] mingle: all alone
+[2017-04-18 18:10:18,579: WARNING/MainProcess] celery@s1-sit-salt-master ready.
+[2017-04-19 18:06:34,060: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[023179f7-e4f2-4c9f-8c6c-0e25466cb97c]
+[2017-04-19 18:06:34,062: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[5c411a2f-00b2-4594-bec1-c3b90c4801eb]
+[19/Apr/2017 18:06:34] "GET / HTTP/1.1" 200 29911
+[2017-04-19 18:06:35,971: INFO/MainProcess] Task shaker.tasks.dashboard_task[023179f7-e4f2-4c9f-8c6c-0e25466cb97c] succeeded in 1.910357617s: None
+[2017-04-19 18:06:36,397: INFO/MainProcess] Task shaker.tasks.minions_status_task[5c411a2f-00b2-4594-bec1-c3b90c4801eb] succeeded in 0.425007261001s: None
+[19/Apr/2017 18:06:39] "GET /minions/minions_asset_info/ HTTP/1.1" 200 15799
+[19/Apr/2017 18:07:02] "GET /groups/manage_group/ HTTP/1.1" 500 89009
+[19/Apr/2017 18:07:03] "GET /favicon.ico HTTP/1.1" 404 3154
+[19/Apr/2017 18:07:09] "GET /minions/minions_keys/ HTTP/1.1" 200 17831
+[19/Apr/2017 18:07:09] "GET /minions/minions_keys/ HTTP/1.1" 200 17831
+[19/Apr/2017 18:07:15] "GET /account/manage_user/ HTTP/1.1" 200 43325
+[19/Apr/2017 18:07:18] "GET /groups/manage_group/ HTTP/1.1" 500 88981
+[19/Apr/2017 18:08:09] "GET /account/logout/ HTTP/1.1" 302 0
+[19/Apr/2017 18:08:09] "GET /account/login HTTP/1.1" 200 5028
+[19/Apr/2017 18:08:11] "POST /account/login/ HTTP/1.1" 302 0
+[2017-04-19 18:08:11,937: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[29094385-ae1c-40cc-87ad-1dec44536578]
+[2017-04-19 18:08:11,941: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[dbed0f86-73d1-4a45-a27a-924de5d6f6a6]
+[19/Apr/2017 18:08:11] "GET / HTTP/1.1" 200 29911
+[2017-04-19 18:08:13,415: INFO/MainProcess] Task shaker.tasks.dashboard_task[29094385-ae1c-40cc-87ad-1dec44536578] succeeded in 1.477109887s: None
+[2017-04-19 18:08:13,806: INFO/MainProcess] Task shaker.tasks.minions_status_task[dbed0f86-73d1-4a45-a27a-924de5d6f6a6] succeeded in 0.390009836003s: None
+[19/Apr/2017 18:08:13] "GET /groups/manage_group/ HTTP/1.1" 500 88901
+[19/Apr/2017 18:08:17] "GET /groups/manage_host/ HTTP/1.1" 500 88332
+[2017-04-19 18:09:30,867: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[8ea37ec4-133b-44cc-a6ef-a9ed6c950163]
+[2017-04-19 18:09:30,867: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[8117f0d1-5145-4287-a654-d931e7ef7526]
+[19/Apr/2017 18:09:30] "GET / HTTP/1.1" 200 29911
+[2017-04-19 18:09:32,701: INFO/MainProcess] Task shaker.tasks.dashboard_task[8ea37ec4-133b-44cc-a6ef-a9ed6c950163] succeeded in 1.83291953s: None
+[19/Apr/2017 18:09:32] "GET /account/logout/ HTTP/1.1" 302 0
+[19/Apr/2017 18:09:32] "GET /account/login HTTP/1.1" 200 5028
+[2017-04-19 18:09:33,107: INFO/MainProcess] Task shaker.tasks.minions_status_task[8117f0d1-5145-4287-a654-d931e7ef7526] succeeded in 0.405507828007s: None
+[19/Apr/2017 18:09:36] "POST /account/login/ HTTP/1.1" 200 5248
+[19/Apr/2017 18:09:40] "POST /account/login/ HTTP/1.1" 302 0
+[2017-04-19 18:09:40,779: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[390ab9c4-f2f4-4b57-8821-210217c916d8]
+[2017-04-19 18:09:40,780: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[235e46b5-dbc2-4985-a5af-cd0f07667f7d]
+[19/Apr/2017 18:09:40] "GET / HTTP/1.1" 200 29912
+[19/Apr/2017 18:09:42] "GET /groups/manage_group/ HTTP/1.1" 200 34582
+[19/Apr/2017 18:09:44] "GET /groups/manage_host/ HTTP/1.1" 200 33615
+[19/Apr/2017 18:09:46] "GET /system_setup/system_tools/ HTTP/1.1" 200 19225
+[19/Apr/2017 18:09:48] "GET /minions/minions_status/ HTTP/1.1" 200 16843
+[19/Apr/2017 18:09:53] "GET /minions/minions_asset_info/ HTTP/1.1" 200 15800
+[19/Apr/2017 18:09:54] "GET /minions/minions_asset_info/ HTTP/1.1" 200 15800
+[19/Apr/2017 18:10:05] "GET /minions/minions_keys/ HTTP/1.1" 200 17832
+[19/Apr/2017 18:10:06] "GET /minions/minions_keys/ HTTP/1.1" 200 17832
+[2017-04-19 18:10:06,403: INFO/MainProcess] Task shaker.tasks.dashboard_task[390ab9c4-f2f4-4b57-8821-210217c916d8] succeeded in 25.622701067s: None
+[2017-04-19 18:10:06,801: INFO/MainProcess] Task shaker.tasks.minions_status_task[235e46b5-dbc2-4985-a5af-cd0f07667f7d] succeeded in 0.397854594004s: None
+[19/Apr/2017 18:15:47] "GET /minions/minions_asset_info/ HTTP/1.1" 200 15800
+[19/Apr/2017 18:15:49] "GET /minions/minions_keys/ HTTP/1.1" 200 17832
+[19/Apr/2017 18:15:52] "GET /minions/minions_asset_info/ HTTP/1.1" 200 15800
+Performing system checks...
+
+System check identified no issues (0 silenced).
+April 19, 2017 - 18:06:25
+Django version 1.8.4, using settings 'saltshaker.settings'
+Starting development server at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+April 20, 2017 - 11:28:29
+Django version 1.8.4, using settings 'saltshaker.settings'
+Starting development server at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+[2017-04-20 14:02:24,411: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[d3756264-9fa4-4197-94f7-26963cc3612a]
+[2017-04-20 14:02:24,413: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[4168f76b-eb2d-4108-bb3b-2e2db3de6091]
+[20/Apr/2017 14:02:24] "GET / HTTP/1.1" 200 29912
+[20/Apr/2017 14:02:24] "GET /static/bower_components/datatables-responsive/css/dataTables.responsive.css HTTP/1.1" 304 0
+[20/Apr/2017 14:02:24] "GET /static/bower_components/metisMenu/dist/metisMenu.min.css HTTP/1.1" 304 0
+[20/Apr/2017 14:02:24] "GET /static/bower_components/bootstrap/dist/css/bootstrap.min.css HTTP/1.1" 304 0
+[20/Apr/2017 14:02:24] "GET /static/dist/css/sb-admin-2.css HTTP/1.1" 304 0
+[20/Apr/2017 14:02:24] "GET /static/bower_components/font-awesome/css/font-awesome.min.css HTTP/1.1" 304 0
+[20/Apr/2017 14:02:24] "GET /static/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css HTTP/1.1" 304 0
+[20/Apr/2017 14:02:24] "GET /static/select2-4.0.2/dist/css/select2.min.css HTTP/1.1" 304 0
+[20/Apr/2017 14:02:24] "GET /static/echarts2/build/dist/echarts.js HTTP/1.1" 304 0
+[20/Apr/2017 14:02:24] "GET /static/bower_components/bootstrap/dist/js/bootstrap.min.js HTTP/1.1" 304 0
+[20/Apr/2017 14:02:24] "GET /static/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js HTTP/1.1" 304 0
+[20/Apr/2017 14:02:24] "GET /static/bower_components/jquery/dist/jquery.min.js HTTP/1.1" 304 0
+[20/Apr/2017 14:02:24] "GET /static/select2-4.0.2/dist/js/select2.min.js HTTP/1.1" 304 0
+[20/Apr/2017 14:02:24] "GET /static/bower_components/metisMenu/dist/metisMenu.min.js HTTP/1.1" 304 0
+[20/Apr/2017 14:02:24] "GET /static/bower_components/datatables/media/js/jquery.dataTables.min.js HTTP/1.1" 304 0
+[20/Apr/2017 14:02:24] "GET /static/dist/js/sb-admin-2.js HTTP/1.1" 304 0
+[20/Apr/2017 14:02:24] "GET /static/images/logo.png HTTP/1.1" 304 0
+[20/Apr/2017 14:02:24] "GET /static/bower_components/font-awesome/fonts/fontawesome-webfont.woff?v=4.2.0 HTTP/1.1" 304 0
+[20/Apr/2017 14:02:24] "GET /static/echarts2/build/dist//chart/line.js HTTP/1.1" 304 0
+[20/Apr/2017 14:02:24] "GET /static/echarts2/build/dist/chart/funnel.js HTTP/1.1" 304 0
+[20/Apr/2017 14:02:24] "GET /static/echarts2/build/dist/chart/bar.js HTTP/1.1" 304 0
+[20/Apr/2017 14:02:24] "GET /static/echarts2/build/dist/chart/pie.js HTTP/1.1" 304 0
+[2017-04-20 14:02:25,885: INFO/MainProcess] Task shaker.tasks.dashboard_task[d3756264-9fa4-4197-94f7-26963cc3612a] succeeded in 1.47264735799s: None
+[2017-04-20 14:02:26,280: INFO/MainProcess] Task shaker.tasks.minions_status_task[4168f76b-eb2d-4108-bb3b-2e2db3de6091] succeeded in 0.394569351978s: None
+[20/Apr/2017 14:02:26] "GET /execute/minions_shell_runcmd/ HTTP/1.1" 200 20191
+[20/Apr/2017 14:02:51] "GET /execute/minions_shell_result/ HTTP/1.1" 200 615
+Performing system checks...
+
+System check identified no issues (0 silenced).
+April 20, 2017 - 11:29:23
+Django version 1.8.4, using settings 'saltshaker.settings'
+Starting development server at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+April 20, 2017 - 14:10:40
+Django version 1.8.4, using settings 'saltshaker.settings'
+Starting development server at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+[2017-04-20 14:20:48,273: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[7e172be4-3c7c-4466-8b17-e8620f1e62b7]
+[2017-04-20 14:20:48,274: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[dd7051e8-9eef-4a6e-9759-af8c6ade0690]
+[20/Apr/2017 14:20:48] "GET / HTTP/1.1" 200 29912
+[2017-04-20 14:20:49,777: INFO/MainProcess] Task shaker.tasks.dashboard_task[7e172be4-3c7c-4466-8b17-e8620f1e62b7] succeeded in 1.50313956299s: None
+[2017-04-20 14:20:50,175: INFO/MainProcess] Task shaker.tasks.minions_status_task[dd7051e8-9eef-4a6e-9759-af8c6ade0690] succeeded in 0.398194100009s: None
+[2017-04-20 14:20:50,202: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[6b89eef5-d11c-4dc0-8560-4c248bd33455]
+[2017-04-20 14:20:50,202: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[8d7636e7-b7d4-4d3c-a5bc-641d4a25873c]
+[20/Apr/2017 14:20:50] "GET / HTTP/1.1" 200 29912
+[20/Apr/2017 14:20:51] "GET /minions/minions_status/ HTTP/1.1" 200 16843
+[20/Apr/2017 14:20:56] "GET /minions/minions_asset_info/ HTTP/1.1" 200 15800
+[20/Apr/2017 14:21:05] "GET /static/bower_components/jquery/dist/jquery.min.map HTTP/1.1" 200 127542
+[20/Apr/2017 14:21:15] "GET /minions/minions_keys/ HTTP/1.1" 200 17832
+[2017-04-20 14:21:16,682: INFO/MainProcess] Task shaker.tasks.dashboard_task[6b89eef5-d11c-4dc0-8560-4c248bd33455] succeeded in 26.479214527s: None
+[2017-04-20 14:21:17,093: INFO/MainProcess] Task shaker.tasks.minions_status_task[8d7636e7-b7d4-4d3c-a5bc-641d4a25873c] succeeded in 0.410779377009s: None
+[20/Apr/2017 14:23:36] "GET /minions/minions_asset_info/ HTTP/1.1" 200 15800
+[20/Apr/2017 14:23:40] "GET /minions/minions_keys/ HTTP/1.1" 200 17832
+[20/Apr/2017 14:23:42] "GET /minions/minions_asset_info/ HTTP/1.1" 200 15800
+[20/Apr/2017 14:23:55] "GET /minions/minions_asset_info/ HTTP/1.1" 200 15800
+Performing system checks...
+
+System check identified no issues (0 silenced).
+April 20, 2017 - 14:18:07
+Django version 1.8.4, using settings 'saltshaker.settings'
+Starting development server at http://0.0.0.0:80/
+Quit the server with CONTROL-C.
+[2017-04-20 16:19:38,624: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[e003c271-5123-486d-997e-eaf1ffcfb19f]
+[2017-04-20 16:19:38,625: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[153d4966-9d65-4ba0-996d-cc56611d1e76]
+[2017-04-20 16:19:40,098: INFO/MainProcess] Task shaker.tasks.dashboard_task[e003c271-5123-486d-997e-eaf1ffcfb19f] succeeded in 1.471786446s: None
+[2017-04-20 16:19:40,514: INFO/MainProcess] Task shaker.tasks.minions_status_task[153d4966-9d65-4ba0-996d-cc56611d1e76] succeeded in 0.415436979994s: None
+[2017-04-20 16:27:50,526: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[c1b60823-157f-4050-9324-9eae38ba749f]
+[2017-04-20 16:27:50,527: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[543e39ba-ee2c-4458-b171-ba25e49c8604]
+[2017-04-20 16:27:52,007: INFO/MainProcess] Task shaker.tasks.dashboard_task[c1b60823-157f-4050-9324-9eae38ba749f] succeeded in 1.47935314599s: None
+[2017-04-20 16:27:52,404: INFO/MainProcess] Task shaker.tasks.minions_status_task[543e39ba-ee2c-4458-b171-ba25e49c8604] succeeded in 0.396953185002s: None
+[2017-04-20 16:28:13,289: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[290ccc28-e1d5-40b9-8327-efb234473791]
+[2017-04-20 16:28:13,290: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[f693270b-e4ca-422b-bdf5-666e7a251de8]
+[2017-04-20 16:28:14,760: INFO/MainProcess] Task shaker.tasks.dashboard_task[290ccc28-e1d5-40b9-8327-efb234473791] succeeded in 1.46992366001s: None
+[2017-04-20 16:28:15,356: INFO/MainProcess] Task shaker.tasks.minions_status_task[f693270b-e4ca-422b-bdf5-666e7a251de8] succeeded in 0.595618588006s: None
+[2017-04-20 16:35:21,968: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[1b0b6ce2-3b76-491f-8290-3a67d492688d]
+[2017-04-20 16:35:21,968: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[86b2ee54-b0cc-4c77-86ad-f576a171f053]
+[2017-04-20 16:35:23,436: INFO/MainProcess] Task shaker.tasks.dashboard_task[1b0b6ce2-3b76-491f-8290-3a67d492688d] succeeded in 1.46727679099s: None
+[2017-04-20 16:35:23,825: INFO/MainProcess] Task shaker.tasks.minions_status_task[86b2ee54-b0cc-4c77-86ad-f576a171f053] succeeded in 0.388154250017s: None
+[2017-04-20 16:36:05,689: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[bb326329-4ffc-435a-86fe-d45d27f8fdaf]
+[2017-04-20 16:36:05,690: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[41cbb360-eed9-4881-aa17-5331fc53f406]
+[2017-04-20 16:36:08,360: INFO/MainProcess] Task shaker.tasks.dashboard_task[bb326329-4ffc-435a-86fe-d45d27f8fdaf] succeeded in 2.67019815298s: None
+[2017-04-20 16:36:08,750: INFO/MainProcess] Task shaker.tasks.minions_status_task[41cbb360-eed9-4881-aa17-5331fc53f406] succeeded in 0.389423076005s: None
+[2017-04-20 16:38:33,530: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[5782c023-a6bf-4a78-aa9a-862e52dac1fe]
+[2017-04-20 16:38:33,531: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[c3d721d1-ba48-421c-958c-ea9bfabca37a]
+[2017-04-20 16:38:35,466: INFO/MainProcess] Task shaker.tasks.dashboard_task[5782c023-a6bf-4a78-aa9a-862e52dac1fe] succeeded in 1.93459895201s: None
+[2017-04-20 16:38:35,864: INFO/MainProcess] Task shaker.tasks.minions_status_task[c3d721d1-ba48-421c-958c-ea9bfabca37a] succeeded in 0.396848784992s: None
+[2017-04-20 16:40:13,497: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[189adf83-588b-424f-bb10-8f2ed3c6f408]
+[2017-04-20 16:40:13,498: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[ab48d3cd-4616-43f0-a56a-2ec5fdabde01]
+[2017-04-20 16:40:13,977: INFO/MainProcess] Task shaker.tasks.dashboard_task[189adf83-588b-424f-bb10-8f2ed3c6f408] succeeded in 0.479152613989s: None
+[2017-04-20 16:40:14,385: INFO/MainProcess] Task shaker.tasks.minions_status_task[ab48d3cd-4616-43f0-a56a-2ec5fdabde01] succeeded in 0.408051446982s: None
+[2017-04-20 16:41:02,353: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[8fe621f1-995c-4f01-ad16-e75f87a5d3dc]
+[2017-04-20 16:41:02,354: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[e167223e-3886-4a9a-b434-55ee2129abb0]
+[2017-04-20 16:41:02,829: INFO/MainProcess] Task shaker.tasks.dashboard_task[8fe621f1-995c-4f01-ad16-e75f87a5d3dc] succeeded in 0.474738340999s: None
+[2017-04-20 16:41:03,227: INFO/MainProcess] Task shaker.tasks.minions_status_task[e167223e-3886-4a9a-b434-55ee2129abb0] succeeded in 0.397264761996s: None
+[2017-04-20 16:43:10,979: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[e46bdb10-3df0-4284-88dc-5b2dd46a8389]
+[2017-04-20 16:43:10,981: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[beb8672d-a2fc-4a54-bebd-b3adc02f49d1]
+[2017-04-20 16:43:13,710: INFO/MainProcess] Task shaker.tasks.dashboard_task[e46bdb10-3df0-4284-88dc-5b2dd46a8389] succeeded in 2.73012443699s: None
+[2017-04-20 16:43:14,164: INFO/MainProcess] Task shaker.tasks.minions_status_task[beb8672d-a2fc-4a54-bebd-b3adc02f49d1] succeeded in 0.453378467006s: None
+[2017-04-20 16:43:29,684: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[ea86d01d-bf85-4ffa-ba01-2a1f15905363]
+[2017-04-20 16:43:29,685: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[2b0a5447-1d2c-4eeb-af84-b1bdcb5db747]
+[2017-04-20 16:43:31,152: INFO/MainProcess] Task shaker.tasks.dashboard_task[ea86d01d-bf85-4ffa-ba01-2a1f15905363] succeeded in 1.466884339s: None
+[2017-04-20 16:43:31,546: INFO/MainProcess] Task shaker.tasks.minions_status_task[2b0a5447-1d2c-4eeb-af84-b1bdcb5db747] succeeded in 0.393358169007s: None
+[2017-04-20 18:08:31,578: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[4d4b6cf6-73ef-4266-8baa-79499d3c8d86]
+[2017-04-20 18:08:31,579: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[537fba63-399f-4d0a-a958-e74c60d17038]
+[2017-04-20 18:08:33,108: INFO/MainProcess] Task shaker.tasks.dashboard_task[4d4b6cf6-73ef-4266-8baa-79499d3c8d86] succeeded in 1.52815916599s: None
+[2017-04-20 18:08:33,503: INFO/MainProcess] Task shaker.tasks.minions_status_task[537fba63-399f-4d0a-a958-e74c60d17038] succeeded in 0.394657507015s: None
+[2017-04-21 17:20:05,546: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[b8e0dd00-582c-4f8d-ad33-898301c75446]
+[2017-04-21 17:20:05,548: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[44fe3ecf-22c0-4477-b5bb-f731c22ac8f9]
+[2017-04-21 17:20:07,027: INFO/MainProcess] Task shaker.tasks.dashboard_task[b8e0dd00-582c-4f8d-ad33-898301c75446] succeeded in 1.476929828s: None
+[2017-04-21 17:20:07,423: INFO/MainProcess] Task shaker.tasks.minions_status_task[44fe3ecf-22c0-4477-b5bb-f731c22ac8f9] succeeded in 0.395841307996s: None
+[2017-04-21 17:40:07,533: INFO/MainProcess] Received task: shaker.tasks.dashboard_task[82aa43bd-f7d8-47c9-a414-0510a09e2818]
+[2017-04-21 17:40:07,534: INFO/MainProcess] Received task: shaker.tasks.minions_status_task[7622e9d8-d696-4e2b-93fa-e3f34da5693f]
+[2017-04-21 17:40:09,065: INFO/MainProcess] Task shaker.tasks.dashboard_task[82aa43bd-f7d8-47c9-a414-0510a09e2818] succeeded in 1.529946083s: None
+[2017-04-21 17:40:09,466: INFO/MainProcess] Task shaker.tasks.minions_status_task[7622e9d8-d696-4e2b-93fa-e3f34da5693f] succeeded in 0.400398606987s: None
